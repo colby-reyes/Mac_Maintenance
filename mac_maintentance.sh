@@ -43,6 +43,12 @@ sudo purge;
 echo "Done"
 echo "___________________________"
 
+# update and restart
+echo 'updating ...'
+sudo softwareupdate -iaR
+echo "Done"
+echo "___________________________"
+
 
 # clear NVRAM before restart/poweroff
 echo 'Clearing NVRAM…'
