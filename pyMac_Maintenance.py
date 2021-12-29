@@ -121,24 +121,35 @@ def clear_caches():
 			- install.log
 			- asl
 			- ./db/diagnostics
+		
 		- for User Application Logs:
 			- see symlinks in /Users/colbyr/Documents/GitHub/Mac_Maintenance/symlinks/AppLog_SymLinks
 				- delete all files in * for * in AppLog_Symlinks
+				- alternatively:
+					- for _ in /{$USER}/Library/Containers delete:
+						- _/Data/Library/Logs/*
+		
 		- for User Application Caches:
 			- see symlinks in /Users/colbyr/Documents/GitHub/Mac_Maintenance/symlinks/
 				- delete all files in * for * in AppCache_Symlinks
+				- alternatively:
+					- for _ in /{$USER}/Library/Containers:
+						- _/Data/Library/Caches/*
+		
 		- for User Caches:
 			- delete all in /Users/{$USER}/Library/Caches? or delete all in subfolders in this location?
+		
 		- for User Logs:
 			- delete all in /Users/{$USER}/Library/Logs? or delete all in subfolders in this location?
+		
 		- for System Logs:
-			- delete all in /private/tmp? or delete all in subfolders in this location?
+			- probably not necessary
+		
 		- for Global Temp Files:
-			- delete all in /Users/{$USER}/Library/Preferences? or delete all in subfolders in this location?
+			- delete all in /private/tmp? or delete all in subfolders in this location?
+			
 		- for User Preferences (note: not recommended to delete >> try moving to trash instead so they can be restored if necessary):
 			- selections from /Users/colbyr/Library/Preferences
-		- iMessage attachments:
-			- 
 		
 		
 		
