@@ -69,7 +69,7 @@ def maintenance():
 		modified = time.ctime(os.path.getmtime(f))
 		return f"[bold][blue]Script: {sname}[/bold][/blue]\n[yellow]Last run: [/yellow]{modified}"
 	
-	def show_runTimes():
+	def show_runTimes(flst, log_dir):
 		renderables = []
 		for i in flst:
 			fh = os.path.join(log_dir,i)
@@ -77,7 +77,7 @@ def maintenance():
 		console.print(Columns(renderables))
 	
 	# show last run times of maintenance scripts
-	show_runTimes()
+	show_runTimes(flst, log_dir)
 	
 	# ask user which scripts to run
 	maint_cmd = ""
@@ -96,16 +96,68 @@ def maintenance():
 	if maint_cmd != "":
 		pass
 	else:
-		
 		return 0
+
 	with console.status(f"[bold blue]Running maintenance scritps...", spinner='aesthetic') as status:
 		os.system(f"periodic {maint_cmd}")
 		print(f"\n[bold green]Done!")
 	
 	# show updated history to check that maintenance was run
 	print("[bold yellow]Updated maintenance script history:")
-	show_runTimes()
+	show_runTimes(flst, log_dir)
 	
+
+def clear_caches():
+	"""
+	TODO: figure out how to check if application is running and ask to quit or skip if it is running
+	"""
+	"""
+	This script is to clear the following caches:
+		- in /private/var/log:
+			- wifi.log
+			- systemlog.2.gz
+			- system.log
+			- DiagnosticMessages
+			- install.log
+			- asl
+			- ./db/diagnostics
+		- for User Application Logs:
+			- see symlinks in /Users/colbyr/Documents/GitHub/Mac_Maintenance/symlinks/AppLog_SymLinks
+				- delete all files in * for * in AppLog_Symlinks
+		- for User Application Caches:
+			- see symlinks in /Users/colbyr/Documents/GitHub/Mac_Maintenance/symlinks/
+				- delete all files in * for * in AppCache_Symlinks
+		- for User Caches:
+			- delete all in /Users/{$USER}/Library/Caches? or delete all in subfolders in this location?
+		- for User Logs:
+			- delete all in /Users/{$USER}/Library/Logs? or delete all in subfolders in this location?
+		- for System Logs:
+			- delete all in /private/tmp? or delete all in subfolders in this location?
+		- for Global Temp Files:
+			- delete all in /Users/{$USER}/Library/Preferences? or delete all in subfolders in this location?
+		- for User Preferences (note: not recommended to delete >> try moving to trash instead so they can be restored if necessary):
+			- selections from /Users/colbyr/Library/Preferences
+		- iMessage attachments:
+			- 
+		
+		
+		
+		Alternatively, based on CleanMyMac:
+		- in /Library/Logs:
+			- DiagnosticReports
+		- in /Users/{$USER}/Library/Logs:
+			- 
+		- in /System/Library/Caches:
+			- 
+		- in /Library/Caches:
+			- 
+		- in /Users/{$USER}/Library/Caches:
+			- 
+		- for _ in /{$USER}/Library/Containers:
+			- _/Data/Library/Caches/*
+			- _/Data/Library/Logs/*
+	"""
+
 
 
 # purge DNS/UDNS
@@ -117,7 +169,6 @@ def flush_DNS():
 		os.system(f"killall -HUP mDNSResponder")
 		print(f"\n[bold green]Done!")
 
-	console.print(Markdown("<hr>"))
 
 
 # reset/rebuild launch services
