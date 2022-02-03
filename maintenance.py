@@ -21,25 +21,25 @@ console = Console()
 
 
 # set up input-response function
-def ask_yesno(question, run_by_default="n"):
+def ask_yesno(question, run_by_default=False):
 	"""Standard yes/no question to take input from user.
 		  - Takes input "question", a string of the question to ask
 		  - Will only continue if input resolves to "y" or "n"
 		  - if input resolves to "y": returns True
 		  - if input resolves to "n": returns 
      Argument: run_by_default
-      - defaults to "n" >> allows user to enter question sequence
-      - if "y" is entered as the argument, bypasses question sequence and returns True
+      - defaults to False >> allows user to enter question sequence
+      - if True is entered as the argument, bypasses question sequence and returns True
 	"""
 	
 	q_txt = f"{question} [Y/n] "
 	
-  if run_by_default.lower() == "n":
+  if run_by_default.lower() == False:
     pass
-  elif run_by_default.lower() == "y":
+  elif run_by_default.lower() == True:
     return True
   else:
-    raise ValueError("run_by_default: argument must be either 'y' or 'n'")
+    raise ValueError("run_by_default: argument must be boolean, True or False")
   
 	_continue = False
 	# set while loop to ensure only acceptable answers are "y" or "n"
@@ -67,7 +67,7 @@ def purge_ram():
 
 
 
-def maintenance():
+def maintenance(default=False):
 	"""Run built-in periodic maintenance scripts"""
 	
 	log_dir = '/var/log'
@@ -92,7 +92,7 @@ def maintenance():
 	
 	# ask user which scripts to run
 	maint_cmd = ""
-	if ask_yesno("Would you still like to run all 3 scripts?"):
+	if ask_yesno("Would you still like to run all 3 scripts?",default):
 		maint_cmd += " daily weekly monthly"
 	else:
 		if ask_yesno("Run [bold yellow]daily[/bold yellow] script?"):
@@ -206,7 +206,7 @@ def rebuild_launchServices():
 
 
 # update and restart
-def software_updates():
+def software_updates(default=False):
 	with console.status("[bold blue]Checking for software updates...", spinner='aesthetic') as status:
 		cmd = "softwareupdate --list"
 		output = subprocess.Popen(cmd, stdout=subprocess.PIPE, shell=True, universal_newlines=True)
@@ -248,7 +248,7 @@ def software_updates():
 	
 	
 	# ask to install 
-	if ask_yesno("Would you like to install [u]all[/u] updates? \n[i][dim]Note: If you would like to select specific updates to install, please go to System Preferences >> Software Updates"):
+	if ask_yesno("Would you like to install [u]all[/u] updates? \n[i][dim]Note: If you would like to select specific updates to install, please go to System Preferences >> Software Updates",default):
 		with console.status(f'Installing updates...', spinner='aesthetic') as status:
 			os.system("softwareupdate -ia")
 		print(f"\n[bold green]Done!")
@@ -263,10 +263,12 @@ def clear_nvram():
 	
 
 # clear NVRAM before restart/poweroff
-def ask_powerOff():
+def ask_powerOff(end_default="3"):
 	"""Give completion options (shutdown, restart, or nothing), then call the built-in function to clear NVRAM, followed by shutdown, restart, or exit (based on user input)"""
 	print("[bold][green]Cleanup and maintenance scritps completed!\n   [yellow][1] Shutdown[/yellow]\n   [cyan][2] Restart[/cyan]\n   [magenta][3] Exit Mac_Maintenance.py (keep computer on)[/magenta]")
 	
+  valid = {"-s":"1", "-r":"2", "-e":"3"}
+  
 	resp = None
 	while resp not in ["1","2","3"]:
 		resp = input(" >>> ")
@@ -284,11 +286,42 @@ def ask_powerOff():
 
 
 
+    
+### define sysargs
+import argparse
+ 
+def get_args():
+  """ Function : get_args
+  parameters used in .add_argument
+  1. metavar - Provide a hint to the user about the data type.
+  - By default, all arguments are strings.
+
+  2. type - The actual Python data type
+  - (note the lack of quotes around str)
+
+  3. help - A brief description of the parameter for the usage
+
+  4. choices - pre defined range of choices a user can enter to this program
+
+  """
+
+  parser = argparse.ArgumentParser(
+    description='Example for one positional arguments',
+    formatter_class=argparse.ArgumentDefaultsHelpFormatter)
+
+  # arguments for shutdown options
+  parser.add_argument('end_default',
+                      metavar='end_default',
+                      type=int,
+                      choices=range(1, 4),
+                      help='1 = poweroff; 2 = restart; 3 = exit script')
+
+  return parser.parse_args()
 
 
 ### Main function to run all functions
 def main():
-	purge_ram()
+	purge_ram(run_by_default)
 	maintenance()
 	flush_DNS()
 	rebuild_launchServices()
