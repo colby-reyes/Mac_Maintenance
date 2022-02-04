@@ -167,6 +167,7 @@ def clear_caches():
 		- for _ in /{$USER}/Library/Containers:
 			- _/Data/Library/Caches/*
 			- _/Data/Library/Logs/*
+			- NOTE: most important _ here seems to be com.apple.Safari >>> run `rm -rf .../com.apple.Safari/Data/Library/Caches/Webkit` and delete all folders inside .../com.apple.Safari/Data/Library/Caches/com.apple.Safari 
 	"""
 
 
