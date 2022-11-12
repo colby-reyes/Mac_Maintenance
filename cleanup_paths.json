@@ -1,0 +1,79 @@
+{
+  "Core Cleanup": [
+    {
+      "Safari": {
+        "WebKitCache": "/Users/colbyr/Library/Containers/com.apple.Safari/Data/Library/Caches/com.apple.Safari/WebKitCache",
+        "WebKitCache_0": "/Users/colbyr/Library/Caches/com.apple.Safari/WebKitCache",
+        "com.apple.metal": "/private/var/folders/wp/hhrb4fvn20d1gyw93gky8_k80000gn/C/com.apple.Safari/com.apple.metal",
+        "com.apple.Safari": "/private/var/folders/wp/hhrb4fvn20d1gyw93gky8_k80000gn/C/com.apple.Safari/com.apple.Safari",
+        "mds": "/private/var/folders/wp/hhrb4fvn20d1gyw93gky8_k80000gn/C/com.apple.Safari/mds",
+        "scriptmanager_cache": "/private/var/folders/wp/hhrb4fvn20d1gyw93gky8_k80000gn/com.apple.scriptmanager2.le.cache",
+        "WebKit": "/Users/colbyr/Library/Containers/com.apple.Safari/Data/Library/Caches/WebKit",
+        "Webpage Previews": "/Users/colbyr/Library/Containers/com.apple.Safari/Data/Library/Caches/com.apple.Safari/Webpage Previews",
+        "CloudKit": "/Users/colbyr/Library/Containers/com.apple.Safari/Data/Library/Caches/CloudKit",
+        "TabSnapshots": "/Users/colbyr/Library/Containers/com.apple.Safari/Data/Library/Caches/com.apple.Safari/TabSnapshots",
+        "fsCachedData": "/Users/colbyr/Library/Containers/com.apple.Safari/Data/Library/Caches/com.apple.Safari/fsCachedData",
+        "Cache.db-shm": "/Users/colbyr/Library/Containers/com.apple.Safari/Data/Library/Caches/com.apple.Safari/Cache.db-shm",
+        "Cache.db-wal": "/Users/colbyr/Library/Containers/com.apple.Safari/Data/Library/Caches/com.apple.Safari/Cache.db-wal",
+        "Cache.db": "/Users/colbyr/Library/Containers/com.apple.Safari/Data/Library/Caches/com.apple.Safari/Cache.db"
+      }
+    },
+    {
+      "Spark": {
+        "com.readdle.smartemail-Mac": "/private/var/folders/wp/hhrb4fvn20d1gyw93gky8_k80000gn/C/com.readdle.smartemail-Mac",
+        "WebKit": "/Users/colbyr/Library/Containers/com.readdle.smartemail-Mac/Data/Library/Caches/WebKit",
+        "smartemail-Mac": "/Users/colbyr/Library/Containers/com.readdle.smartemail-Mac/Data/Library/Caches/com.readdle.smartemail-Mac",
+        "crashreporter": "/Users/colbyr/Library/Containers/com.readdle.smartemail-Mac/Data/Library/Caches/com.plausiblelabs.crashreporter.data"
+      }
+    },
+    {
+      "Preview": {
+        "com.apple.Preview": "/private/var/folders/wp/hhrb4fvn20d1gyw93gky8_k80000gn/C/com.apple.Preview",
+        "Containers/com.apple.Preview": "/Users/colbyr/Library/Containers/com.apple.Preview/Data/Library/Caches/com.apple.Preview"
+      }
+    },
+    {
+      "Spotlight": {
+        "Spotlight.app Cache": "/Users/colbyr/Library/Caches/com.apple.Spotlight"
+      }
+    },
+    {
+      "iMessages": {
+        "com.apple.iChat": "/private/var/folders/wp/hhrb4fvn20d1gyw93gky8_k80000gn/C/com.apple.iChat",
+        "com.apple.Messages": "/Users/colbyr/Library/Containters/com.apple.iChat/Data/Library/Caches/com.apple.Messages"
+      }
+    },
+    {
+      "AppStore": {
+        "App Store.app Cache": "/Users/colbyr/Library/Caches/com.apple.appstore",
+        "Metrics": "/Users/colbyr/Library/Containers/com.apple.AppStore/Data/Library/Caches/Metrics",
+        "com.apple.AppStore": "/Users/colbyr/Library/Containers/com.apple.AppStore/Data/Library/Caches/com.apple.AppStore",
+        "com.apple.AppleMediaServices": "/Users/colbyr/Library/Containers/com.apple.AppStore/Data/Library/Caches/com.apple.AppleMediaServices"
+      }
+    },
+    {
+      "Other": {
+        "WebContent": "/private/var/folders/wp/hhrb4fvn20d1gyw93gky8_k80000gn/C/com.apple.WebKit.WebContent",
+        "com.apple.helpd": "/Users/colbyr/Library/Caches/com.apple.helpd",
+        "Jedi": "/Users/colbyr/Library/Caches/Jedi",
+        "Homebrew": "/Users/colbyr/Library/Caches/Homebrew",
+        "pip": "/Users/colbyr/Library/Caches/pip",
+        "com.apple.AppleMediaServices": "/Users/colbyr/Library/Caches/com.apple.AppleMediaServices",
+        "QuickLook": "/private/var/folders/wp/hhrb4fvn20d1gyw93gky8_k80000gn/C/com.apple.quicklook.QuickLookUIService",
+        "trustd": "/private/var/folders/wp/hhrb4fvn20d1gyw93gky8_k80000gn/C/com.apple.trustd",
+        "photoanalysisd": "/private/var/folders/wp/hhrb4fvn20d1gyw93gky8_k80000gn/C/com.apple.photoanalysisd",
+        "SafeBrowsing": "/private/var/folders/wp/hhrb4fvn20d1gyw93gky8_k80000gn/C/com.apple.Safari.SafeBrowsing",
+        "OpenGL": "/private/var/folders/wp/hhrb4fvn20d1gyw93gky8_k80000gn/C/com.nvidia.openGL",
+        "WebKit.GPU": "/private/var/folders/wp/hhrb4fvn20d1gyw93gky8_k80000gn/C/com.apple.WebKit.GPU",
+        "parsecd": "/Users/colbyr/Library/Caches/com.apple.parsecd",
+        "com.apple.parsecd": "/private/var/folders/wp/hhrb4fvn20d1gyw93gky8_k80000gn/C/com.apple.parsecd",
+        "com.apple.mediaanalysisd": "/private/var/folders/wp/hhrb4fvn20d1gyw93gky8_k80000gn/C/com.apple.mediaanalysisd",
+        "com.apple.nsurlsessiond": "/Users/colbyr/Library.Containers/com.apple.geod.Data.Library/Caches/com.apple.nsurlsessiond",
+        "com.apple.geod": "/Users/colbyr/Library/Containers/com.apple.geod/Data/Library/Caches/com.apple.geod",
+        "Unified Log": "/private/var/db/diagnostics",
+        "com.apple.coresymbolicationd": "/System/Library/Caches/com.apple.coresymbolicationd",
+        "com.apple.iconservices.store": "/Library/Caches/com.apple.iconservices.store"
+      }
+    }
+  ]
+}
